@@ -15,6 +15,15 @@ exports.getusers = async (req, res) => {
         return res.status(500).json(err.message)
     }
 }
+exports.getsearch = async (req, res) => {
+    try {
+        const users = await Users.find(req.query.name);
+        return res.status(200).json(users)
+    }
+    catch (err) {
+        return res.status(500).json(err.message)
+    }
+}
 
 exports.SignUp = async (req, res) => {
     try {

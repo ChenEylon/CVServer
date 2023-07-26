@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken")
 const jwtMiddleware = async (req, res, next) => {
     const token = req.headers['token']
     const splitToken = token.split(' ')[1]
-
     if (!token) {
         return res.status(403).json('Not authorized!')
     }
@@ -30,7 +29,7 @@ const jwtMiddleware = async (req, res, next) => {
 //             return res.status(403).json('Unauthorized')
 //         }
 //         if(!user.isAdmin){
-            
+
 //         }
 //         res.locals.currentObject = user
 //         next()
